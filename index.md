@@ -83,19 +83,21 @@ with $N$ number of timesteps.
 #### Derivatives
 In the `derivatives/` folder, the data are organized more alike the [BIDS format](https://bids-standard.github.io/bids-starter-kit/).
 The `sub-<label>_ses-T2_scans.tsv` file contains relevant information on the data files, and the initial timestamp:
-| filename | acq_time_start
-| -------- | --------------
-| motion/sub-COKI12345_ses-T2_run-20190926_motion.mat | 26-Sep-2019 09:00:02
-| pressure/sub-COKI12345_ses-T2_run-20190926_pressure.mat | 26-Sep-2019 09:00:02
-| ... | ...
+
+| filename | acq_time_start |
+| -------- | -------------- |
+| motion/sub-COKI12345_ses-T2_run-20190926_motion.mat | 26-Sep-2019 09:00:02 |
+| pressure/sub-COKI12345_ses-T2_run-20190926_pressure.mat | 26-Sep-2019 09:00:02 |
+| ...      | ...            |
 
 Then the `motion/sub-COKI12345_ses-T2_run-20190926_channes.tsv` file contains informations about the data, namely:
-| name           | type   | component | tracked_point | units | sampling_frequency
-| -------------- | ------ | --------- | ------------- | ----- | ------------------
-| ankle_ACC_x    | ACC    | x         | ankle         | g     | 64
-| ankle_ACC_y    | ACC    | y         | ankle         | g     | 64
-| ...            | ...    | ...       | ...           | ...   | ...
-| wrist_ANGVEL_z | ANGVEL | z         | wrist         | dps   | 64
+
+| name           | type   | component | tracked_point | units | sampling_frequency |
+| -------------- | ------ | --------- | ------------- | ----- | ------------------ |
+| ankle_ACC_x    | ACC    | x         | ankle         | g     | 64                 |
+| ankle_ACC_y    | ACC    | y         | ankle         | g     | 64                 |
+| ...            | ...    | ...       | ...           | ...   | ...                |
+| wrist_ANGVEL_z | ANGVEL | z         | wrist         | dps   | 64                 |
 
 and the data itself is stored in the `motion/sub-COKI12345_ses-T2_run-20190926_motion.mat` file, in a `NxD double` array called `motion`, with `N` number of time steps, and `D` number of channels:
 ```matlab
